@@ -61,6 +61,31 @@ class _StoryPageState extends State<StoryPage> {
                     brain.getChoice1(),
                     style: TextStyle(
                       fontSize: 20.0,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height:20.0,
+              ),
+              Expanded(
+                flex:2,
+                child: Visibility(
+                  visible:brain.visibleButton(),
+                  child: TextButton(
+                    onPressed: () {
+                      setState(() {
+                        brain.nextStory(2);
+                      });
+                    },
+                    style: TextButton.styleFrom(backgroundColor: Colors.green),
+                    child: Text(
+                      brain.getChoice2(),
+                      style: TextStyle(
+                        fontSize: 20.0,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
